@@ -9,8 +9,11 @@ public class Pedido {
 	private Fecha fecha;
 	private int telefono;
 	
-	public Pedido(int codigoPedido, String nombre, String direccion, int importe, Fecha fecha, int telefono) {
-		this.codigoPedido = codigoPedido;
+	// Para generar el código de los pedidos
+	private static int genCodigo = 0;
+	
+	public Pedido(String nombre, String direccion, int importe, Fecha fecha, int telefono) {
+		this.codigoPedido = genCodigo++; //No sé si funcionará
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.importe = importe;

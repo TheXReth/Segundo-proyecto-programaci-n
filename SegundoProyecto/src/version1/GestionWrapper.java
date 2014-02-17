@@ -10,15 +10,11 @@ public class GestionWrapper {
 	private Wrapper primero;
 	private Wrapper ultimo;
 	private int numeroPedidos;
-
-	// Para generar el código de los pedidos
-	private static int genCodigo;
 	
 	public GestionWrapper() {
 		primero = null;
 		ultimo = null;
 		numeroPedidos =  0;
-		genCodigo = 0;
 	}
 	
 	public boolean save(String filename) {
