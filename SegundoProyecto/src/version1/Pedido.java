@@ -69,4 +69,11 @@ public class Pedido {
 		this.telefono = telefono;
 	}
 	
+	//////////////////// Para las pruebas
+	public String toString() {
+		
+		
+		return frase;
+	}
+	
 }
