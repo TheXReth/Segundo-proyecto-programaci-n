@@ -1,6 +1,7 @@
 package version1;
 
-public class Pedido {
+
+public class Pedido implements Comparable<Pedido>{
 	
 	private int codigoPedido;
 	private String nombre;
@@ -8,6 +9,22 @@ public class Pedido {
 	private int importe;
 	private Fecha fecha;
 	private int telefono;
+	
+	/*
+	 * 0 - Código
+	 * 1 - Nombre
+	 * 2 - Dirección
+	 * 3 - Importe
+	 * 4 - Fecha
+	 * 5 - Teléfono
+	 */
+	private int ordenacion;
+	
+	/*
+	 * False - Ordena de menor a mayor
+	 * True - Ordena de mayor a menor
+	 */
+	private boolean ordenacionInversa = false;
 	
 	// Para generar el código de los pedidos
 	private static int genCodigo = 0;
@@ -69,11 +86,57 @@ public class Pedido {
 		this.telefono = telefono;
 	}
 	
-	//////////////////// Para las pruebas
+
+	//ToString temporal
 	public String toString() {
-		
-		
-		return frase;
+		return (codigoPedido +" " + nombre + " " + direccion + " " + importe +
+				" " + fecha + " " + telefono);
+	}
+
+	@Override
+	public int compareTo(Pedido p) {
+		switch(ordenacion) {
+		case 0:
+			if (codigoPedido == p.codigoPedido)
+				return 0;
+			if (codigoPedido > p.codigoPedido)
+				return 1;
+			else return -1;
+		case 1:
+			if (nombre.equals(p.nombre))
+				return 0;
+			if (nombre.compareTo(p.nombre) == 1)
+				return 1;
+			else return -1;
+		case 2:
+			if (nombre.equals(p.direccion))
+				return 0;
+			if (nombre.compareTo(p.direccion) == 1)
+				return 1;
+			else return -1;
+		case 3:
+			if (importe == p.importe)
+				return 0;
+			if (importe > p.importe)
+				return 1;
+			else return -1;
+		case 4:
+			//Fecha
+			if (nombre.equals(p.nombre))
+				return 0;
+			if (nombre.compareTo(p.nombre) == 1)
+				return 1;
+			else return -1;
+		case 5:
+			if (telefono == p.telefono)
+				return 0;
+			if (telefono > p.telefono)
+				return 1;
+			else return -1;
+		default:
+			System.out.println("Esto no debe ejecutarse nunca.");
+			return 2;
+		}
 	}
 	
 }
