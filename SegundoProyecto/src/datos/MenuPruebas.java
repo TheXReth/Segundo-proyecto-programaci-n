@@ -1,4 +1,4 @@
-package version1;
+package datos;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package version1;
+package datos;
 
 
 public class Pedido implements Comparable<Pedido>{
@@ -9,6 +9,7 @@ public class Pedido implements Comparable<Pedido>{
 	private int importe;
 	private Fecha fecha;
 	private int telefono;
+	private boolean realizado;
 	
 	/*
 	 * 0 - Código
@@ -62,6 +63,10 @@ public class Pedido implements Comparable<Pedido>{
 		return telefono;
 	}
 	
+	public boolean getRealizado() {
+		return realizado;
+	}
+	
 	public void setCodigoPedido(int codigoPedido) {
 		this.codigoPedido = codigoPedido;
 	}
@@ -84,6 +89,10 @@ public class Pedido implements Comparable<Pedido>{
 
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
+	}
+	
+	public void setRealizado(boolean realizado) {
+		this.realizado = realizado;
 	}
 	
 
